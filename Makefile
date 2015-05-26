@@ -5,11 +5,11 @@ files = $(wildcard ch*.sml)
 targets = $(patsubst %.sml,%,$(files))
 
 test:
-	@time sml $(files)
+	@time sml $(files) exit.sml
 
 .PHONY: $(targets) all
 
 $(targets):
-	@time sml $@.sml
+	@time sml $@.sml exit.sml
 
 all: $(targets)

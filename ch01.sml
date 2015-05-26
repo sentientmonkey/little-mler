@@ -35,5 +35,3 @@ Bread(
  Bread(
   One_more_than(
    Zero)));
-
-val _ = OS.Process.exit(OS.Process.success);
