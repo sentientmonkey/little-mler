@@ -1,11 +1,10 @@
 use "prelude.sml";
 use "ch01.sml";
 
-datatype shish_kehab =
-   Skewer
- | Onion of shish_kehab
- | Lamb of shish_kehab
- | Tomato of shish_kehab;
+datatype shish_kehab = Skewer
+                     | Onion of shish_kehab
+                     | Lamb of shish_kehab
+                     | Tomato of shish_kehab;
 
 Skewer;
 
@@ -25,14 +24,10 @@ Onion(
   Onion(
    Skewer)));
 
-fun only_onions(Skewer)
-  = true
-  | only_onions(Onion(x))
-    = only_onions(x)
-  | only_onions(Lamb(x))
-    = false
-  | only_onions(Tomato(x))
-    = false;
+fun only_onions(Skewer) = true
+  | only_onions(Onion(x)) = only_onions(x)
+  | only_onions(Lamb(x)) = false
+  | only_onions(Tomato(x)) = false;
 
 (only_onions : shish_kehab -> bool);
 
@@ -46,14 +41,10 @@ only_onions(
   Lamb(
    Skewer)));
 
-fun is_vegetarian(Skewer)
-   = true
-   | is_vegetarian(Lamb(x))
-     = false
-   | is_vegetarian(Onion(x))
-     = is_vegetarian(x)
-   | is_vegetarian(Tomato(x))
-     = is_vegetarian(x);
+fun is_vegetarian(Skewer) = true
+  | is_vegetarian(Lamb(x)) = false
+  | is_vegetarian(Onion(x)) = is_vegetarian(x)
+  | is_vegetarian(Tomato(x)) = is_vegetarian(x);
 
 (is_vegetarian : shish_kehab -> bool);
 
@@ -74,21 +65,18 @@ is_vegetarian(
   Lamb(
    Skewer)));
 
-datatype 'a shish =
- Bottom of 'a
- | Onion of 'a shish
- | Lamb of 'a shish
- | Tomato of 'a shish;
+datatype 'a shish = Bottom of 'a
+                  | Onion of 'a shish
+                  | Lamb of 'a shish
+                  | Tomato of 'a shish;
 
-datatype rod =
- Dagger
- | Fork
- | Sword;
+datatype rod = Dagger
+             | Fork
+             | Sword;
 
-datatype dish =
- Bowl
- | Plate
- | Platter;
+datatype dish = Bowl
+              | Plate
+              | Platter;
 
 Onion(
  Tomato(
@@ -98,14 +86,10 @@ Onion(
  Tomato(
   Bottom(Plate)));
 
-fun is_veggie(Bottom(x))
-   = true
-   | is_veggie(Lamb(x))
-     = false
-   | is_veggie(Onion(x))
-     = is_veggie(x)
-   | is_veggie(Tomato(x))
-     = is_veggie(x);
+fun is_veggie(Bottom(x)) = true
+  | is_veggie(Lamb(x)) = false
+  | is_veggie(Onion(x)) = is_veggie(x)
+  | is_veggie(Tomato(x)) = is_veggie(x);
 
 (is_veggie : 'a shish -> bool);
 
