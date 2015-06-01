@@ -118,3 +118,49 @@ is_veggie(
  Onion(
   Tomato(
    Bottom(false))));
+
+Onion(
+  Tomato(
+    Bottom(Dagger)));
+
+Onion(
+  Tomato(
+    Bottom(Platter)));
+
+Onion(
+  Tomato(
+    Bottom(52)));
+
+fun what_bottom(Bottom(x)) = x
+  | what_bottom(Lamb(x)) = what_bottom(x)
+  | what_bottom(Onion(x)) = what_bottom(x)
+  | what_bottom(Tomato(x)) = what_bottom(x);
+
+(what_bottom : 'a shish -> 'a);
+
+what_bottom(
+  Onion(
+    Tomato(
+     Bottom(Dagger))));
+
+what_bottom(Bottom(52));
+
+what_bottom(Bottom(Sword));
+
+what_bottom(
+  Tomato(
+    Onion(
+      Lamb(
+        Bottom(52)))));
+
+what_bottom(
+  Onion(
+    Lamb(
+      Bottom(52))));
+
+what_bottom(
+  Lamb(
+    Bottom(52)));
+
+what_bottom(
+  Bottom(52));
