@@ -1,19 +1,20 @@
 use "prelude.sml";
+use "test.sml";
 
 datatype seasoning = Salt
                    | Pepper;
 
-Salt;
-Pepper;
+Salt : seasoning;
+Pepper : seasoning;
 
 datatype num = Zero
              | One_more_than of num;
 
-One_more_than(Zero);
+One_more_than(Zero) : num;
 
 One_more_than(
  One_more_than(
-  Zero));
+  Zero)) : num;
 
 datatype 'a open_faced_sandwich = Bread of 'a
                                 | Slice of 'a open_faced_sandwich;
