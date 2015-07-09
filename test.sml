@@ -14,5 +14,3 @@ fun assert_equal(expected,actual) =
   if expected <> actual then
     raise Failed
   else true;
-
-
